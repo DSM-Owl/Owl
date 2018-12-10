@@ -1,6 +1,6 @@
 # Owl.exe functions
 
-#### 1. 기능
+#### Owl.exe 기능
 
 1. 감시 시작
 
