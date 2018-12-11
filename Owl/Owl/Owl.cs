@@ -29,13 +29,22 @@ namespace Owl
             Process.Start(@"https://github.com/PlanNoa");
         }
 
-        private void startButton_Click(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e)
         {
-            startWatch setPathForm = new startWatch();
-            setPathForm.ShowDialog();
+            Process[] checkFILEMON = Process.GetProcessesByName("Owl-monitor");
+
+            if (checkFILEMON.Length > 0)
+            {
+                MessageBox.Show("감시가 진행중입니다.", "오류");
+            }
+            else
+            {
+                startWatch setPathForm = new startWatch();
+                setPathForm.ShowDialog();
+            }
         }
 
-        private void stopButton_Click(object sender, EventArgs e)
+        private void StopButton_Click(object sender, EventArgs e)
         {
             Process[] checkFILEMON = Process.GetProcessesByName("Owl-monitor");
 

@@ -86,7 +86,7 @@
             this.stopButton.Size = new System.Drawing.Size(500, 150);
             this.stopButton.TabIndex = 1;
             this.stopButton.UseVisualStyleBackColor = true;
-            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
+            this.stopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // startButton
             // 
@@ -99,7 +99,7 @@
             this.startButton.Size = new System.Drawing.Size(500, 150);
             this.startButton.TabIndex = 0;
             this.startButton.UseVisualStyleBackColor = true;
-            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            this.startButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // logtab
             // 
