@@ -96,6 +96,7 @@ namespace Owl
                 }
                 else
                 {
+                    logList.Clear();
                     while(logFileList.Items.Count > 0)
                     {
                         logFileList.Items[0].Remove();
