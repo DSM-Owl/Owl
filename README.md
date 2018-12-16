@@ -1,3 +1,3 @@
 # Owl
 
-Press the stars please
+We are genius.
