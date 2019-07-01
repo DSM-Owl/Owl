@@ -5,6 +5,7 @@ import datetime
 import os
 import time
 import io
+import cv2
 
 global files_name
 global files_handle
@@ -30,9 +31,18 @@ def write(path, data):
     f.write(data+"    "+str(t)+"\n")
     f.close()
 
+def takepic(path):
+    cap = cv2.VideoCapture(0)
+    cap.set(3, 640)
+    cap.set(4, 480)
+    _, frame = cap.read()
+    cap.release()
+    cv2.imwrite('pic/' + path + '.jpg', frame)
+
 if __name__ == '__main__':
     try:
         os.mkdir(os.getcwd() +'/log')
+        os.mkdir(os.getcwd() + '/pic')
     except:
         pass
     f = io.open("path.txt", mode="r", encoding="utf-8")
@@ -50,10 +60,12 @@ if __name__ == '__main__':
                 temp = file_handle.split(' - ')
                 if temp[0] in files:
                     write(temp[0], temp[1])
+                    takepic(temp[0])
                 else:
                     for file in files:
                         if file.split('.')[0] == temp[0]:
                             write(temp[0], temp[1])
+                            takepic(temp[0])
             except:
                 pass
 
@@ -61,3 +73,4 @@ if __name__ == '__main__':
 
 # made by PlanNoa
 # https://github.com/PlanNoa
+
